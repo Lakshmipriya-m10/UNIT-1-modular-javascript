@@ -13,30 +13,49 @@
     2. Give 'animalType' an optional default value of "Horse".
     3. Inside the constructor, hardcode a default property: 'this.speedMultiplier' set to 1.5.
 */
-
-/*
-    TODO: Instantiate two mounts to test your defaults:
-    1. Create 'basicMount' without passing any arguments.
-    2. Create 'epicMount' and pass it the string "Dragon".
-    Log both to see how the optional parameter behaves.
-*/
-
-/** EXERCISE 2: REPAIRING THE SHIELD BLUEPRINT **/
-
-/*
-    TODO: The class definition below is not as flexible as it needs to be. 
-    Fix it so that all shields automatically start with a durability of 100 and
-    while an element can be specified, if it is omitted, the default value is "Fire".
-*/
-class MagicShield {
-	constructor(shieldName, element, durability) {
-		this.name = shieldName;
-		this.protectionElement = element;
-		this.durability = durability;
+class GameMount {
+	constructor(animalType = "Horse") {
+		this.type = animalType;
+		this.speedMultiplier = 1.5;
 	}
 }
 
 /*
-    TODO: Test the repaired class. Create a shield named "Aegis" but do not pass an 
-    element parameter. Log a statement that describes the shield to the player.
+    Instantiate two mounts to test your defaults:
+    1. Create 'basicMount' without passing any arguments.
+    2. Create 'epicMount' and pass it the string "Dragon".
+    Log both to see how the optional parameter behaves.
 */
+const basicMount = new GameMount();
+const epicMount = new GameMount("Dragon");
+
+console.log(
+	`Your going to ride : ${basicMount.type} Speed : x${basicMount.speedMultiplier}`
+);
+console.log(
+	`Your going to ride : ${epicMount.type} Speed : x${epicMount.speedMultiplier}`
+);
+
+/** EXERCISE 2: REPAIRING THE SHIELD BLUEPRINT **/
+
+class MagicShield {
+	// FIX: Added a default fallback configuration value to the 'element' parameter
+	constructor(shieldName, element = "Fire") {
+		this.name = shieldName;
+		this.protectionElement = element;
+		
+		this.durability = 100;
+	}
+}
+
+/*
+    Test the repaired class. Create a shield named "Aegis" but do not 
+    pass an element parameter. Log what the player sees.
+*/
+const protectiveShield = new MagicShield("Aegis");
+
+console.log(
+	`You have Shield : ${protectiveShield.name}  Protection Element: ${protectiveShield.protectionElement} Durability: ${protectiveShield.durability}.`
+);
+
+

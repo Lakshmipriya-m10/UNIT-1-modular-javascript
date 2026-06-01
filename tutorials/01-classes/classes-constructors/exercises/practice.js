@@ -5,13 +5,19 @@
     independent entity profiles into memory.
 */
 
-/** EXERCISE 1: THE ITEM INVENTORY FACTORY **/
+console.log("******* EXERCISE 1: THE ITEM INVENTORY FACTORY *******\n");
 
 /*
     TODO: Create a class blueprint named 'GameItem'.
     1. Give it a constructor that accepts two parameters: 'itemName' and 'goldValue'.
     2. Inside the constructor, map those parameters to 'this.name' and 'this.value'.
 */
+class GameItem {
+    constructor(itemName, goldValue) {
+        this.itemName = itemName;
+        this.goldValue = goldValue;
+    }
+}
 
 /*
     TODO: Instantiate two unique items using the 'new' keyword:
@@ -20,7 +26,17 @@
     Log both objects to verify their data structures.
 */
 
-/** EXERCISE 2: MOB SPAWNER VERIFICATION **/
+const potion = new GameItem("Healing Potion", 50);
+const shield = new GameItem("Iron Shield", 150);
+
+console.log(
+    `${potion.itemName} have value of ${potion.goldValue}`);
+
+console.log(
+    `${shield.itemName} have value of ${shield.goldValue}`);    
+
+
+console.log("\n******** EXERCISE 2: MOB SPAWNER VERIFICATION ********\n");
 
 class EnemyMob {
 	constructor(type, powerRating) {
@@ -33,6 +49,6 @@ class EnemyMob {
     TODO: The instantiation sequence below is completely broken and throwing errors!
     Fix the code line below so that a new EnemyMob instance is successfully generated.
 */
-const eliteOrc = EnemyMob("Orc Raider", 45);
+const eliteOrc = new EnemyMob("Orc Raider", 45);
 
-console.log(`\nA hostile ${eliteOrc.mobType} has appeared! (Power: ${eliteOrc.power})`);
+console.log(`A hostile ${eliteOrc.mobType} has appeared! (Power: ${eliteOrc.power})`);

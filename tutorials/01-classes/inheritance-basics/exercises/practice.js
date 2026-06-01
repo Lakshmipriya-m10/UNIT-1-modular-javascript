@@ -20,11 +20,23 @@ class BaseHero {
     2. Use 'super' to pass the 'heroName' up to the parent.
     3. Assign 'this.equippedShield' to the incoming 'shieldType' argument.
 */
-
+class Warrior extends BaseHero{
+    constructor (heroName, shieldType)
+    {
+        super (heroName);
+          this.heroName = heroName;
+          this.shieldType = shieldType;  
+    }
+}
 /* 
     TODO: Create a new warrior and log a description using properties from both 
     Warrior and BaseHero.
 */
+
+const newWarrior = new Warrior("Shadow Knight","Golden Shield");
+
+console.log(
+    `New Warrior Name: ${newWarrior.heroName} with Shield: ${newWarrior.shieldType}`);
 
 /** EXERCISE 2: REPAIRING THE EXTENDED PET BLUEPRINT **/
 
@@ -39,7 +51,8 @@ class CompanionAnimal {
     property.
 */
 class Griffin extends CompanionAnimal {
-	constructor(flightSpeed) {
+	constructor(petName, flightSpeed) {
+      super(petName);
 		this.speed = flightSpeed;
 	}
 }
@@ -48,3 +61,8 @@ class Griffin extends CompanionAnimal {
     TODO: Create a new griffin with both a name and speed, then log a description 
     using both properties.
 */
+
+const newPet = new Griffin("IceWing",50);
+
+console.log(
+    `Griffin Name: ${newPet.petName} with flight speed: ${newPet.flightSpeed}`);

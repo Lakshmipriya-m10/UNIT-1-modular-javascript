@@ -13,6 +13,6 @@
     Capture it in a constant named 'config', then replace null values
     in the log statements with the correct references.
 */
-
-console.log(`Welcome to ${null}!`);
-console.log(`Maximum allowed team size: ${null} players.`);
+const settings = require('./settings');
+console.log(`Welcome to ${settings.gameTitle}!`);
+console.log(`Maximum allowed team size: ${settings.maxPartySize} players.`);

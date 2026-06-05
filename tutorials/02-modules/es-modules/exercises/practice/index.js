@@ -18,6 +18,7 @@
     'scoreMultiplier' and 'doubleScore' out of "./gameCalculations.js".
     Replace null values below, passing in 150 points for the doubleScore function.
 */
+import { scoreMultiplier, doubleScore } from "./gameCalculations.js";
 
-console.log(`Current Event Multiplier: x${null}`);
-console.log(`New total: ${null} points!`);
+console.log(`Current Event Multiplier: x ${scoreMultiplier}`);
+console.log(`New total: ${doubleScore(150)} points!`);

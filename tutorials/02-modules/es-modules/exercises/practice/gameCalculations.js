@@ -2,8 +2,11 @@
     TODO: Add the modern ES Module export keywords to expose the 
     variable and function below to the rest of the application.
 */
-const scoreMultiplier = 2;
+export const scoreMultiplier = 2;
 
-function doubleScore(currentScore) {
+export function doubleScore(currentScore) {
+   
     return currentScore * scoreMultiplier;
 }
+
+

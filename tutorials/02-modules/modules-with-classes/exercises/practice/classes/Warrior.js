@@ -12,3 +12,5 @@ class Warrior {
 		return `${this.name} shifts into an ${this.stance} stance.`;
 	}
 }
+
+export { Warrior };
